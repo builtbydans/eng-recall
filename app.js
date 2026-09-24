@@ -170,7 +170,7 @@ function switchMode(mode) {
   if (state.mode === mode) return;
   state.mode = mode;
   render();
-  window.scrollTo({ top: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, behavior: "auto" });
 }
 ui.openTab.addEventListener("click", () => switchMode("open"));
 ui.mcqTab.addEventListener("click", () => switchMode("mcq"));
@@ -201,7 +201,7 @@ ui.next.addEventListener("click", () => {
   const list = visibleCards();
   state.current[state.mode] = list[(indexOfCurrent(list) + 1) % list.length].id;
   render();
-  window.scrollTo({ top: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, behavior: "auto" });
 });
 
 render();
