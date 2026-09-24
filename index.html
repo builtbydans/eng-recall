@@ -22,7 +22,10 @@
             <button type="button" role="tab" id="open-tab" aria-selected="true" aria-controls="practice-panel">Open-ended</button>
             <button type="button" role="tab" id="mcq-tab" aria-selected="false" aria-controls="practice-panel">MCQ</button>
           </div>
-          <span class="score" id="score" aria-live="polite">Score 0 / 0</span>
+          <div class="score-actions">
+            <span class="score" id="score" aria-live="polite">Score 0 / 0</span>
+            <button class="reset-button" id="reset-button" type="button" title="Clear scores and reshuffle questions">Reset</button>
+          </div>
         </div>
         <div class="practice" id="practice-panel" role="tabpanel" aria-labelledby="open-tab">
           <div class="toolbar">
@@ -36,6 +39,7 @@
           <section class="question-card" aria-labelledby="question">
             <p class="eyebrow" id="eyebrow"></p>
             <h1 id="question"></h1>
+            <pre class="code-example" id="code-example" hidden></pre>
             <div class="progress-track" role="progressbar" id="progress" aria-label="Card progress" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" id="progress-fill"></div></div>
           </section>
           <div class="choices" id="choices" role="group" aria-label="Choose an answer" hidden></div>

@@ -1,13 +1,15 @@
+import { applyShuffle, createShuffle, isValidShuffle } from "./shuffle.mjs";
+
 async function loadCards(path) {
   const response = await fetch(new URL(path, import.meta.url));
   if (!response.ok) throw new Error(`Could not load ${path}`);
   return response.json();
 }
 
-const [notionCards, extraOpenCards, mcqCards] = await Promise.all([
-  loadCards("./cards.json"), loadCards("./extra-open.json"), loadCards("./mcq.json"),
+const [notionCards, extraOpenCards, mcqCards, extraMcqCards] = await Promise.all([
+  loadCards("./cards.json"), loadCards("./extra-open.json"), loadCards("./mcq.json"), loadCards("./mcq-extra.json"),
 ]);
-const decks = { open: [...notionCards, ...extraOpenCards], mcq: mcqCards };
+const allMcqCards = [...mcqCards, ...extraMcqCards];
 
 const palettes = {
   TypeScript: { tint: "#eaf1fc", accent: "#a1bce8", ink: "#3c567c" },
@@ -25,22 +27,25 @@ const palettes = {
 const $ = (id) => document.getElementById(id);
 const ui = {
   app: $("app"), panel: $("practice-panel"), openTab: $("open-tab"), mcqTab: $("mcq-tab"),
-  category: $("category"), count: $("count"), score: $("score"), eyebrow: $("eyebrow"),
-  difficulty: $("difficulty"), question: $("question"), choices: $("choices"),
+  category: $("category"), count: $("count"), score: $("score"), reset: $("reset-button"), eyebrow: $("eyebrow"),
+  difficulty: $("difficulty"), question: $("question"), code: $("code-example"), choices: $("choices"),
   answerPanel: $("answer-panel"), answer: $("answer-text"), kicker: $("answer-kicker"),
   content: $("answer-content"), toggle: $("answer-toggle"), label: $("answer-label"),
   next: $("next-button"), progress: $("progress"), fill: $("progress-fill"),
   grade: $("self-grade"), gradeYes: $("grade-yes"), gradeNo: $("grade-no"), gradeNote: $("grade-note"),
 };
 
-const storageKey = "eng-recall-progress-v2";
+const storageKey = "eng-recall-progress-v3";
 let stored = {};
 try { stored = JSON.parse(localStorage.getItem(storageKey) || "{}"); } catch { /* Storage is optional. */ }
+const initialShuffle = isValidShuffle(allMcqCards, stored.shuffle) ? stored.shuffle : createShuffle(allMcqCards);
+const decks = { open: [...notionCards, ...extraOpenCards], mcq: applyShuffle(allMcqCards, initialShuffle) };
 const state = {
   mode: stored.mode === "mcq" ? "mcq" : "open",
   categories: { open: stored.categories?.open || "All cards", mcq: stored.categories?.mcq || "All cards" },
   current: { open: stored.current?.open, mcq: stored.current?.mcq },
-  marks: { open: stored.marks?.open || {}, mcq: stored.marks?.mcq || {} },
+  marks: { open: stored.marks?.open || {}, mcq: isValidShuffle(allMcqCards, stored.shuffle) ? stored.marks?.mcq || {} : {} },
+  shuffle: initialShuffle,
 };
 let opened = false;
 
@@ -150,6 +155,8 @@ function render() {
   ui.eyebrow.textContent = `${card.category} · ${String(index + 1).padStart(2, "0")}`;
   ui.difficulty.textContent = card.difficulty;
   ui.question.textContent = card.question;
+  ui.code.hidden = !card.code;
+  ui.code.textContent = card.code || "";
   const percentage = Math.round(((index + 1) / list.length) * 100);
   ui.fill.style.width = `${percentage}%`;
   ui.progress.setAttribute("aria-valuenow", String(percentage));
@@ -200,6 +207,16 @@ for (const [button, grade] of [[ui.gradeNo, false], [ui.gradeYes, true]]) {
 ui.next.addEventListener("click", () => {
   const list = visibleCards();
   state.current[state.mode] = list[(indexOfCurrent(list) + 1) % list.length].id;
+  render();
+  window.scrollTo({ top: 0, behavior: "auto" });
+});
+ui.reset.addEventListener("click", () => {
+  if (!window.confirm("Clear scores and progress in both modes, then reshuffle the MCQs and their answers?")) return;
+  state.shuffle = createShuffle(allMcqCards);
+  decks.mcq = applyShuffle(allMcqCards, state.shuffle);
+  state.categories = { open: "All cards", mcq: "All cards" };
+  state.current = { open: undefined, mcq: undefined };
+  state.marks = { open: {}, mcq: {} };
   render();
   window.scrollTo({ top: 0, behavior: "auto" });
 });
