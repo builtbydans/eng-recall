@@ -1,0 +1,690 @@
+[
+  {
+    "id": "3e3f385edd7f810c9634e1941a773762",
+    "question": "Why is unknown safer than any?",
+    "answer": "any disables type checking for that value. unknown forces you to narrow or validate the value before using it, so unsafe assumptions are caught at compile time.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f810c9634e1941a773762"
+  },
+  {
+    "id": "3e3f385edd7f8111b121e184b5263022",
+    "question": "Why can higher concurrency cause HTTP 429 errors?",
+    "answer": "More concurrent work sends more requests in a short period. If that exceeds an API's request or token limits, the provider may rate-limit you with 429 responses.",
+    "category": "Async",
+    "difficulty": "Hard",
+    "source": "https://app.notion.com/3e3f385edd7f8111b121e184b5263022"
+  },
+  {
+    "id": "3e3f385edd7f8114b32fca8f012881ea",
+    "question": "How do you read a local text file asynchronously with Node promises?",
+    "answer": "For example: import { promises as fs } from \"fs\"; const data = await fs.readFile(path, \"utf8\");.",
+    "category": "Node",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8114b32fca8f012881ea"
+  },
+  {
+    "id": "3e3f385edd7f8124974cfced295b921b",
+    "question": "What does .every() return?",
+    "answer": "A boolean. It returns true only if the callback returns truthy for every element. For an empty array, it returns true.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8124974cfced295b921b"
+  },
+  {
+    "id": "3e3f385edd7f813ca44cd3243436f7a9",
+    "question": "Why do we drop constants in Big O notation?",
+    "answer": "Because Big O is about growth as input becomes large. O(2n) and O(n) grow at the same rate, so both are expressed as O(n).",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f813ca44cd3243436f7a9"
+  },
+  {
+    "id": "3e3f385edd7f81428bbcc0186d5a9f15",
+    "question": "What does Record<string, unknown> represent?",
+    "answer": "An object whose keys are strings and whose values are unknown. It is useful when you know something is object-like but have not yet validated the types of its properties.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81428bbcc0186d5a9f15"
+  },
+  {
+    "id": "3e3f385edd7f814ca8c6cb3fa627d65f",
+    "question": "If readEval() returns Promise<EvalResult>, what is the type of const result = readEval(path)?",
+    "answer": "Promise<EvalResult>. To get the actual EvalResult, use await readEval(path) inside an async function or consume the Promise with .then().",
+    "category": "Async",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f814ca8c6cb3fa627d65f"
+  },
+  {
+    "id": "3e3f385edd7f814f9ae8c22f521e4178",
+    "question": "When is try/catch useful instead of letting an error propagate?",
+    "answer": "When you can handle the error, recover, add useful context, translate it into a domain-specific error, or perform cleanup. Catching only to log and rethrow unchanged often adds little.",
+    "category": "Errors",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f814f9ae8c22f521e4178"
+  },
+  {
+    "id": "3e3f385edd7f815280f6e0d80366b49f",
+    "question": "Why pass \"utf8\" to fs.readFile?",
+    "answer": "It tells Node to decode the bytes as UTF-8 text and return a string. Without an encoding, readFile returns a Buffer.",
+    "category": "Node",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f815280f6e0d80366b49f"
+  },
+  {
+    "id": "3e3f385edd7f8165ad5fca2bbc2cf58d",
+    "question": "What is the complexity of a loop over n items containing another full loop over n items?",
+    "answer": "O(n²), because for each of the n outer iterations, up to n inner iterations run.",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8165ad5fca2bbc2cf58d"
+  },
+  {
+    "id": "3e3f385edd7f816d8ea6e7eb3398b8b9",
+    "question": "When should you use Promise.all()?",
+    "answer": "When multiple independent asynchronous operations can run concurrently and you need all results. It rejects if any input Promise rejects.",
+    "category": "Async",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f816d8ea6e7eb3398b8b9"
+  },
+  {
+    "id": "3e3f385edd7f816dbf3bfd2771a52289",
+    "question": "What is the typical time complexity of looking up a value by key in a JavaScript object or Map?",
+    "answer": "Average-case lookup is typically O(1), though implementation details and worst cases can differ.",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f816dbf3bfd2771a52289"
+  },
+  {
+    "id": "3e3f385edd7f8172ac83ff5dfe5b5dcd",
+    "question": "If you search an array with .find() and then separately .filter() the same array, what is the combined time complexity?",
+    "answer": "O(n) + O(n) = O(n). Big O drops constant factors, even though two passes can still be slower in practice than one.",
+    "category": "Big O",
+    "difficulty": "Hard",
+    "source": "https://app.notion.com/3e3f385edd7f8172ac83ff5dfe5b5dcd"
+  },
+  {
+    "id": "3e3f385edd7f8175bf11f3738361cc0b",
+    "question": "What is an interface?",
+    "answer": "An interface describes the expected shape of an object in TypeScript. It defines which properties and methods should exist and their types. It is erased at runtime.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8175bf11f3738361cc0b"
+  },
+  {
+    "id": "3e3f385edd7f8178be05ff7d4931ac80",
+    "question": "What does await do?",
+    "answer": "It pauses execution of the current async function until a Promise settles, then gives you the fulfilled value or throws the rejection. It does not block the entire Node.js process.",
+    "category": "Async",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8178be05ff7d4931ac80"
+  },
+  {
+    "id": "3e3f385edd7f8181b9a6f10f89ddc3d7",
+    "question": "Why preserve the original error as cause when wrapping it?",
+    "answer": "It keeps the low-level failure details while adding higher-level context, making debugging easier without losing the original stack/error information.",
+    "category": "Errors",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8181b9a6f10f89ddc3d7"
+  },
+  {
+    "id": "3e3f385edd7f81888879f68d0368c912",
+    "question": "What is a type guard?",
+    "answer": "A runtime check whose return type narrows a value for TypeScript, for example value is EvalResult. If it returns true, TypeScript can treat the value as that type.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81888879f68d0368c912"
+  },
+  {
+    "id": "3e3f385edd7f81919c5df9aac80bbd05",
+    "question": "What is a closure?",
+    "answer": "A function retaining access to variables from the lexical scope where it was created, even after the outer scope has finished executing.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81919c5df9aac80bbd05"
+  },
+  {
+    "id": "3e3f385edd7f819ea72ceb32bcce8d51",
+    "question": "What does number | null mean?",
+    "answer": "The value may be either a number or null. The union forces callers to account for the null case before safely using it as a number.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f819ea72ceb32bcce8d51"
+  },
+  {
+    "id": "3e3f385edd7f81a5ab08da17da7f9965",
+    "question": "How would you check that every item in an array is a string?",
+    "answer": "Use .every: Array.isArray(value) && value.every(item => typeof item === \"string\").",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81a5ab08da17da7f9965"
+  },
+  {
+    "id": "3e3f385edd7f81a8a059f3d690b28385",
+    "question": "True or False: TypeScript types exist at runtime.",
+    "answer": "False. TypeScript types are removed during compilation. Runtime JavaScript does not know about interfaces, type aliases, unions, or generics.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81a8a059f3d690b28385"
+  },
+  {
+    "id": "3e3f385edd7f81bc90e3d6eb640d55ff",
+    "question": "Why is a type guard unsafe if it checks only three fields but returns value is EvalResult?",
+    "answer": "Because it claims the entire EvalResult contract is valid while proving only part of it. Later code may trust unchecked properties and fail at runtime.",
+    "category": "TypeScript",
+    "difficulty": "Hard",
+    "source": "https://app.notion.com/3e3f385edd7f81bc90e3d6eb640d55ff"
+  },
+  {
+    "id": "3e3f385edd7f81beb75cdd7dbc084f96",
+    "question": "What does Big O describe?",
+    "answer": "How an algorithm's time or space usage grows as the input size grows. It focuses on growth rate rather than exact runtime.",
+    "category": "Big O",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81beb75cdd7dbc084f96"
+  },
+  {
+    "id": "3e3f385edd7f81c88381e7e8f33c11f9",
+    "question": "What does async do to a function's return value?",
+    "answer": "An async function always returns a Promise. A returned value becomes a resolved Promise; a thrown error becomes a rejected Promise.",
+    "category": "Async",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81c88381e7e8f33c11f9"
+  },
+  {
+    "id": "3e3f385edd7f81c8975ec18a63c007b0",
+    "question": "What is a Promise?",
+    "answer": "An object representing the eventual completion or failure of an asynchronous operation. It can be pending, fulfilled, or rejected.",
+    "category": "Async",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81c8975ec18a63c007b0"
+  },
+  {
+    "id": "3e3f385edd7f81cdb239c46b4b0af534",
+    "question": "What does Pick<EvalResult, \"domain\" | \"benchmark\" | \"arms\"> do?",
+    "answer": "It creates a new type containing only those three properties from EvalResult, preserving their original types.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81cdb239c46b4b0af534"
+  },
+  {
+    "id": "3e3f385edd7f81d18382f9f6caa3d506",
+    "question": "What does O(1) mean?",
+    "answer": "Constant time: the amount of work does not grow with input size, such as accessing an array element by index.",
+    "category": "Big O",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81d18382f9f6caa3d506"
+  },
+  {
+    "id": "3e3f385edd7f81d99db7efdd8850e2f7",
+    "question": "True or False: Two consecutive O(n) loops make the algorithm O(n²).",
+    "answer": "False. Consecutive loops add: O(n) + O(n) = O(2n), which simplifies to O(n). Nested loops multiply and are commonly O(n²).",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81d99db7efdd8850e2f7"
+  },
+  {
+    "id": "3e3f385edd7f81de999cc92aa7453ce6",
+    "question": "What does O(n) mean?",
+    "answer": "Linear time: work grows roughly in proportion to the number of input items, such as scanning every element once.",
+    "category": "Big O",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81de999cc92aa7453ce6"
+  },
+  {
+    "id": "3e3f385edd7f81e4adf8c713fc667ec5",
+    "question": "True or False: as EvalResult validates an object against the interface.",
+    "answer": "False. It is a type assertion. It tells the compiler to trust you and performs no runtime validation.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81e4adf8c713fc667ec5"
+  },
+  {
+    "id": "3e3f385edd7f81f09bc3c6315e65800f",
+    "question": "When might Promise.allSettled() be better than Promise.all()?",
+    "answer": "When you want every operation to finish even if some fail, and you need to inspect each individual success or failure.",
+    "category": "Async",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81f09bc3c6315e65800f"
+  },
+  {
+    "id": "3e3f385edd7f81fdac49d5584c34c081",
+    "question": "What can fail when reading and parsing a JSON file?",
+    "answer": "The file read can fail due to path or permission problems, and JSON.parse can fail if the file contains invalid JSON.",
+    "category": "Node",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81fdac49d5584c34c081"
+  },
+  {
+    "id": "3e3f385edd7f81119967d3ed8bc02002",
+    "question": "Why might you use Pick instead of creating another interface?",
+    "answer": "Pick reuses selected fields from an existing type, so you avoid duplicating property definitions and reduce the risk that the smaller type drifts out of sync when the original type changes.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81119967d3ed8bc02002"
+  },
+  {
+    "id": "3e3f385edd7f814e87aee957a1338aa9",
+    "question": "What is the difference between an interface, a type alias, a union, and a utility type?",
+    "answer": "An interface is one way to describe an object shape. A type alias gives a name to any type, including object shapes, primitives, unions, and more. A union uses | to represent one of several possible types or values. A utility type is a built-in generic helper such as Pick, Omit, or Partial that transforms an existing type.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f814e87aee957a1338aa9"
+  },
+  {
+    "id": "3e3f385edd7f8151b7b6d1f97809451a",
+    "question": "True or False: Pick copies runtime data from an object.",
+    "answer": "False. Pick only creates a new TypeScript type at compile time. Object spread copies runtime values; Pick transforms types.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8151b7b6d1f97809451a"
+  },
+  {
+    "id": "3e3f385edd7f818e82e1e66250a43965",
+    "question": "In type EvalHeader = Pick<EvalResult, \"domain\" | \"benchmark\" | \"arms\">, identify the type alias, interface, union, and utility type.",
+    "answer": "EvalHeader is the type alias. EvalResult is the existing interface/type being transformed. \"domain\" | \"benchmark\" | \"arms\" is a union of property-name literals. Pick is the utility type.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f818e82e1e66250a43965"
+  },
+  {
+    "id": "3e3f385edd7f8100a790edcc666deb39",
+    "question": "Why can candidate.placebo.toFixed() be dangerous if candidate is Record<string, any>?",
+    "answer": "Because any lets the code compile even if placebo is actually null, undefined, or a string. At runtime, calling .toFixed() on the wrong value can crash.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8100a790edcc666deb39"
+  },
+  {
+    "id": "3e3f385edd7f8117a572c56b788ec847",
+    "question": "Why do we write const candidate = value as Record<string, unknown> after checking that value is a non-null object?",
+    "answer": "Because TypeScript still only knows value is some object, not that it has inspectable string-keyed properties. Record<string, unknown> lets us access properties such as candidate.task_id while keeping each property's value untrusted until we narrow it.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8117a572c56b788ec847"
+  },
+  {
+    "id": "3e3f385edd7f8133a682fb4d5aab92fc",
+    "question": "What does Record<string, unknown> mean?",
+    "answer": "It means an object with string keys where every value is currently unknown. The keys are inspectable, but the values must be narrowed before you safely use them.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8133a682fb4d5aab92fc"
+  },
+  {
+    "id": "3e3f385edd7f8157833ec8d7363ef52b",
+    "question": "What problem does Record<string, unknown> solve when starting from a parameter typed as unknown?",
+    "answer": "It gives us permission to inspect string-keyed properties without pretending we already know their value types. This avoids the error that properties cannot be accessed on unknown, while still requiring narrowing for each property.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8157833ec8d7363ef52b"
+  },
+  {
+    "id": "3e3f385edd7f815db35dede6813f63b9",
+    "question": "Why is Record<string, unknown> not itself runtime validation?",
+    "answer": "Because as Record<string, unknown> is still only a type assertion. It does not inspect the runtime value. The actual validation happens in checks such as typeof, Array.isArray, null checks, and .every().",
+    "category": "TypeScript",
+    "difficulty": "Hard",
+    "source": "https://app.notion.com/3e3f385edd7f815db35dede6813f63b9"
+  },
+  {
+    "id": "3e3f385edd7f819387e6f5b5bcb631cb",
+    "question": "True or False: unknown and any both allow you to call methods on a value without checking its type first.",
+    "answer": "False. any allows it and disables safety checks. unknown does not; you must narrow the value first.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f819387e6f5b5bcb631cb"
+  },
+  {
+    "id": "3e3f385edd7f81dd8c44fa4d2b9e6f42",
+    "question": "Why is Record<string, unknown> safer than Record<string, any>?",
+    "answer": "any disables type checking for the values, so unsafe operations compile. unknown forces you to prove the value's type first, which catches bad assumptions before runtime.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81dd8c44fa4d2b9e6f42"
+  },
+  {
+    "id": "3e3f385edd7f81e194edef27e984e52e",
+    "question": "Why is unknown useful when validating external data?",
+    "answer": "unknown preserves type safety because it forces runtime checks before you use a value. You cannot safely call methods, access nested properties, or assume a type until you narrow it.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81e194edef27e984e52e"
+  },
+  {
+    "id": "3e3f385edd7f8186aea7e9c80e8cb18e",
+    "question": "What is wrong with checking typeof value !== \"number\" inside isPerTaskResult()?",
+    "answer": "PerTaskResult is supposed to be an object, not a number. That check rejects every valid object before the property checks run.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8186aea7e9c80e8cb18e"
+  },
+  {
+    "id": "3e3f385edd7f81ce94defab41dc3af70",
+    "question": "Why must a type guard for an object first check typeof value === \"object\" before casting to Record<string, unknown>?",
+    "answer": "Because the input starts as unknown. Before inspecting properties, you need to establish that the runtime value is actually an object. Otherwise you could incorrectly treat a primitive like a number or string as an object.",
+    "category": "TypeScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81ce94defab41dc3af70"
+  },
+  {
+    "id": "3e3f385edd7f8150ae0be32601a73a18",
+    "question": "What is a type guard in TypeScript?",
+    "answer": "A type guard is a runtime check that narrows a value's type for TypeScript. A custom guard can use a predicate such as value is EvalResult so code after a successful check can treat the value as that type.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8150ae0be32601a73a18"
+  },
+  {
+    "id": "3e3f385edd7f8153bfe5c1629c003f82",
+    "question": "What is the difference between a type guard and a runtime validator?",
+    "answer": "A type guard is a TypeScript function whose return type narrows a value for the compiler. A runtime validator is the broader concept of checking data at runtime. A custom type guard can also act as a runtime validator if it truly validates the required shape.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8153bfe5c1629c003f82"
+  },
+  {
+    "id": "3e3f385edd7f817682eef686db634d2e",
+    "question": "Why is readEval() not a React hook?",
+    "answer": "Because it does not use React state, effects, context, or component lifecycle behavior. It is a plain async function for reading data from disk, so it belongs in a utility or data-access module instead.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f817682eef686db634d2e"
+  },
+  {
+    "id": "3e3f385edd7f81798cdfde1f50d732ef",
+    "question": "What is a data-access helper?",
+    "answer": "A data-access helper is a function or module responsible for retrieving data from a source such as a file, database, or API. readEval() is a data-access helper because it reads eval data from disk.",
+    "category": "Node",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81798cdfde1f50d732ef"
+  },
+  {
+    "id": "3e3f385edd7f8188b120f47ef7b34fdf",
+    "question": "True or False: Every function whose name starts with use is automatically a valid React hook.",
+    "answer": "False. Naming convention alone does not make something a hook. A custom hook is a React-specific function that composes hooks or encapsulates reusable React stateful behavior.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8188b120f47ef7b34fdf"
+  },
+  {
+    "id": "3e3f385edd7f818f80f1f26d1bcb8f93",
+    "question": "What is a utility function or utility module?",
+    "answer": "A utility function is a reusable helper that performs a focused task without depending on a specific UI component. A utility module groups related helpers, such as reading files, formatting values, or parsing data.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f818f80f1f26d1bcb8f93"
+  },
+  {
+    "id": "3e3f385edd7f81ab8e03e21c30f59f2a",
+    "question": "What is a React hook?",
+    "answer": "A React hook is a function that lets React components use features such as state, effects, context, memoization, or custom reusable component logic. Hooks are tied to React's rendering model and follow the Rules of Hooks.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81ab8e03e21c30f59f2a"
+  },
+  {
+    "id": "3e3f385edd7f81bbb44fd8db60ea5d22",
+    "question": "What is a runtime validator?",
+    "answer": "A runtime validator checks real data while the program is running and confirms that it matches the expected shape or constraints. Unlike TypeScript types, runtime validators still exist after compilation.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81bbb44fd8db60ea5d22"
+  },
+  {
+    "id": "3e3f385edd7f8123b376fa0df6048e3c",
+    "question": "How would you validate that an unknown value is a dictionary-like object before inspecting its values?",
+    "answer": "Check typeof value === \"object\", value !== null, and !Array.isArray(value). After that, it is reasonable to inspect it as something like Record<string, unknown>.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8123b376fa0df6048e3c"
+  },
+  {
+    "id": "3e3f385edd7f812b9736eec9c984cd83",
+    "question": "How does Node avoid blocking the event loop while fs.promises.readFile() waits for file I/O?",
+    "answer": "The JavaScript call returns a Promise while Node delegates filesystem work through libuv, typically using its worker thread pool for filesystem operations. When the work completes, the Promise is settled and the event loop can continue the async function.",
+    "category": "Node",
+    "difficulty": "Hard",
+    "source": "https://app.notion.com/3e3f385edd7f812b9736eec9c984cd83"
+  },
+  {
+    "id": "3e3f385edd7f8136a62bd1fc64b9a5e0",
+    "question": "Why must object validation explicitly check value !== null after typeof value === \"object\"?",
+    "answer": "Because JavaScript has the historical quirk typeof null === \"object\". Without an explicit null check, null would incorrectly pass a generic object test.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f8136a62bd1fc64b9a5e0"
+  },
+  {
+    "id": "3e3f385edd7f8174bf1bc5bc34f43778",
+    "question": "Why do we not need to validate the keys returned by Object.keys(), Object.values(), or Object.entries() as strings?",
+    "answer": "Normal JavaScript object property keys are strings or symbols, and JSON object keys are strings. Object.keys() and Object.entries() expose the enumerable string-keyed properties, so checking those returned keys with typeof key === \"string\" is redundant.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f8174bf1bc5bc34f43778"
+  },
+  {
+    "id": "3e3f385edd7f81bcadfad89350e14027",
+    "question": "Why is typeof value === (\"number\" || \"null\") not a valid nullable-number check?",
+    "answer": "Because (\"number\" || \"null\") evaluates immediately to the truthy string \"number\". You must write both conditions explicitly: typeof value === \"number\" || value === null.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81bcadfad89350e14027"
+  },
+  {
+    "id": "3e3f385edd7f81dc9888f6588008c03f",
+    "question": "How would you validate a Record<string, number> at runtime?",
+    "answer": "First prove the value is a non-null, non-array object. Then check Object.values(value).every(v => typeof v === \"number\"). The object keys do not need separate string validation in this case.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e3f385edd7f81dc9888f6588008c03f"
+  },
+  {
+    "id": "3e3f385edd7f81f9b89bd4d149602db9",
+    "question": "Why can an array pass typeof value === \"object\", and how do you exclude arrays?",
+    "answer": "Arrays are objects in JavaScript, so typeof [] is \"object\". If you need a dictionary-like object rather than an array, also check !Array.isArray(value).",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e3f385edd7f81f9b89bd4d149602db9"
+  },
+  {
+    "id": "3e4f385edd7f81dd9310e49bae67bf40",
+    "question": "Aptura Eval Lab · What was wrong with the original JSON.parse(data) as EvalResult approach?",
+    "answer": "as EvalResult was only a compile-time assertion. It told TypeScript to trust the parsed value without checking the real runtime shape. Valid JSON with missing or incorrect fields could therefore enter the app as if it were a valid EvalResult and crash later when downstream code accessed properties that were not actually there.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e4f385edd7f81dd9310e49bae67bf40"
+  },
+  {
+    "id": "3e4f385edd7f81e9ab7aeaff643bf3c9",
+    "question": "Aptura Eval Lab · Explain how readEval() safely loads an eval result from disk.",
+    "answer": "The flow is: fs.readFile() loads the JSON file as text, JSON.parse() converts that text into a JavaScript value, and we deliberately treat that parsed value as unknown because external data is not trusted yet. isEvalResult() then acts as the top-level runtime validator and composes smaller guards such as isEvalSummary(), isPerTaskResult(), isUsage(), and isCost(). If every required part matches the expected shape, TypeScript narrows the value from unknown to EvalResult and readEval() returns it. If validation fails, we throw a descriptive error at the data boundary instead of allowing malformed data to fail later in the UI.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e4f385edd7f81e9ab7aeaff643bf3c9"
+  },
+  {
+    "id": "3e4f385edd7f81c5b750f3abd8d6e8fc",
+    "question": "Why can a JavaScript function return undefined even when it seems like it should return an object?",
+    "answer": "If execution reaches the end of a function without hitting an explicit return statement, JavaScript returns undefined automatically. In a function that builds arrays inside a loop, you still need a final return after the loop to package those arrays into the expected result object.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e4f385edd7f81c5b750f3abd8d6e8fc"
+  },
+  {
+    "id": "3e5f385edd7f81199438c093ae8cb482",
+    "question": "What does Object.entries(obj) return, and how is it commonly used with destructuring?",
+    "answer": "It returns an array of [key, value] pairs. Example: for (const [key, stats] of Object.entries(intermediate)) { ... }. This is useful when iterating over dictionaries with dynamic keys.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81199438c093ae8cb482"
+  },
+  {
+    "id": "3e5f385edd7f81208eb0e0c7e574e8b2",
+    "question": "What happens when JavaScript divides 0 by 0, and how should an average function handle an empty set?",
+    "answer": "0 / 0 evaluates to NaN. Before dividing sum by count, guard count === 0 and deliberately return a chosen fallback such as 0 or null.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81208eb0e0c7e574e8b2"
+  },
+  {
+    "id": "3e5f385edd7f8134bb26c37af0512847",
+    "question": "Why can an intermediate accumulator type be easier than building the final return type directly?",
+    "answer": "The data needed while computing may differ from the exported result. For example, keep sumScore and total during accumulation, then calculate averageScore afterwards. Temporary state should serve the algorithm; the final type should serve the function's contract.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f8134bb26c37af0512847"
+  },
+  {
+    "id": "3e5f385edd7f813aac74c78c9fd6ba43",
+    "question": "What does the nullish coalescing operator ?? do, and why is it different from ||?",
+    "answer": "a ?? fallback uses the fallback only when a is null or undefined. It preserves valid falsy values like 0, false, and ''. It does not replace NaN.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f813aac74c78c9fd6ba43"
+  },
+  {
+    "id": "3e5f385edd7f8199b594fc6fdfffe0ee",
+    "question": "How does Set deduplicate primitives, and why does it not deduplicate equivalent object literals?",
+    "answer": "[...new Set(values)] removes duplicate primitive values. Objects are compared by reference identity, so {id: 1} and another {id: 1} are different objects unless they are the same reference.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f8199b594fc6fdfffe0ee"
+  },
+  {
+    "id": "3e5f385edd7f81a18e16e2f697eb2ee9",
+    "question": "How can flatMap() act as a filter-and-map in one pass?",
+    "answer": "Return [value] when an item should be kept and transformed, or [] when it should be dropped. Example: tasks.flatMap(t => t.baseline !== null ? [t.baseline] : []). Use it when it stays readable; filter().map() is often clearer.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81a18e16e2f697eb2ee9"
+  },
+  {
+    "id": "3e5f385edd7f81a2858efbcfcbdc0365",
+    "question": "What is the difference between Record<string, Stats> and an index-signature interface?",
+    "answer": "Record<string, Stats> is a TypeScript utility type meaning string keys map to Stats values. An equivalent index-signature shape is interface StatsMap { [key: string]: Stats }. The descriptive name before : string belongs only inside an index signature, not inside Record's generic arguments.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81a2858efbcfcbdc0365"
+  },
+  {
+    "id": "3e5f385edd7f81c6ad1cfb9114780e22",
+    "question": "Which common JavaScript array methods mutate the original array, and which return a new array?",
+    "answer": "Mutating examples: sort(), reverse(), push(), pop(), splice(). Non-mutating examples: map(), filter(), slice(), and toSorted(). Know which category a method is in before using it on shared input data.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81c6ad1cfb9114780e22"
+  },
+  {
+    "id": "3e5f385edd7f81c9bfbde0add74f6206",
+    "question": "What is the 'scratchpad then deliverable' pattern in data aggregation?",
+    "answer": "During traversal, accumulate simple raw state such as counts, sums, or grouped values in an intermediate structure. After collection, derive averages, ratios, or the final return shape. This is a useful default for keeping aggregation logic easy to reason about, not an absolute rule.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81c9bfbde0add74f6206"
+  },
+  {
+    "id": "3e5f385edd7f81f7bb95e250b426b172",
+    "question": "Why is [...mappedArray].sort(...) usually unnecessary immediately after .map()?",
+    "answer": "map() already returns a new array. Sorting that mapped array mutates only the new array, not the original input array, so an extra shallow copy is redundant in that chain.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81f7bb95e250b426b172"
+  },
+  {
+    "id": "3e5f385edd7f81098805d103f6e80c75",
+    "question": "What is wrong with this null fallback?\n\nconst score = task.baseline || 0;",
+    "answer": "|| treats all falsy values as missing, including a valid numeric 0. Use task.baseline ?? 0 when only null or undefined should trigger the fallback.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81098805d103f6e80c75"
+  },
+  {
+    "id": "3e5f385edd7f8120a18eecb1de896bf3",
+    "question": "Predict the bug: why can this unexpectedly change evalResult.per_task?\n\nconst sorted = evalResult.per_task.sort((a, b) => b.score - a.score);",
+    "answer": "sort() mutates the array it is called on. If the original must stay unchanged, use evalResult.per_task.toSorted(...) or copy first with [...evalResult.per_task].sort(...).",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f8120a18eecb1de896bf3"
+  },
+  {
+    "id": "3e5f385edd7f815f9b1adb99d95981e3",
+    "question": "Which array method fits this job best: turn { id, score } objects into just their score values?",
+    "answer": "Use map(). It transforms each input item into a corresponding output item.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f815f9b1adb99d95981e3"
+  },
+  {
+    "id": "3e5f385edd7f8178bb91f5467d16bee5",
+    "question": "Which method is more appropriate here: map() or forEach()?\n\nYou need a new array where every score is doubled.",
+    "answer": "Use map() because the goal is to transform the array and return a new array. forEach() is for side effects and returns undefined.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f8178bb91f5467d16bee5"
+  },
+  {
+    "id": "3e5f385edd7f819792f1ceaf56f344b7",
+    "question": "What is wrong with this deduplication?\n\n[...new Set([{ id: 1 }, { id: 1 }])]",
+    "answer": "Set compares objects by reference identity, not structural equality, so both objects remain. Deduplicate objects by a stable primitive key such as id, often using a Map or a Set of seen ids.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f819792f1ceaf56f344b7"
+  },
+  {
+    "id": "3e5f385edd7f81a5a3eddf07abcaa20b",
+    "question": "What is wrong here?\n\nconst average = scores.reduce((sum, score) => sum + score) / scores.length;",
+    "answer": "Two issues: reduce has no initial value, so an empty array throws; and dividing by scores.length when length is 0 gives NaN. Safer: guard the empty case and use reduce((sum, score) => sum + score, 0).",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81a5a3eddf07abcaa20b"
+  },
+  {
+    "id": "3e5f385edd7f81bcb9c1e6dccf6d1634",
+    "question": "Debug this: why does this remove the wrong items?\n\nfor (const task of tasks) { if (task.category === \"hi\") tasks.splice(tasks.indexOf(task), 1); }",
+    "answer": "The code mutates the same array while iterating over it, so indexes shift and items can be skipped. Prefer a non-mutating filter: const kept = tasks.filter(task => task.category !== \"hi\").",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81bcb9c1e6dccf6d1634"
+  },
+  {
+    "id": "3e5f385edd7f81bea843d092a43337aa",
+    "question": "Which array method fits this job best: find the first task with task_id === \"B\"?",
+    "answer": "Use find(). It returns the first matching element, or undefined if none matches.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81bea843d092a43337aa"
+  },
+  {
+    "id": "3e5f385edd7f81c9a49dc44ec60a5ec2",
+    "question": "What is wrong here?\n\nfor (const task of tasks) { if (task.score > 0.7) return task; }\n\nif the goal is to collect every high-scoring task?",
+    "answer": "return exits the whole function on the first match. Use filter() or push matches into an array and return after the loop.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81c9a49dc44ec60a5ec2"
+  },
+  {
+    "id": "3e5f385edd7f81e88bcef836ac9bc6d4",
+    "question": "Which pattern should you reach for when output is grouped by a dynamic field such as category?",
+    "answer": "Use a dictionary/Record keyed by that field. For each item: derive the key, initialize the bucket if missing, then accumulate into it. Optionally do a second pass to compute derived values like averages.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81e88bcef836ac9bc6d4"
+  },
+  {
+    "id": "3e5f385edd7f81f4a63bf6b7484f9e84",
+    "question": "Which array method fits this job best: keep only tasks where score >= 0.7?",
+    "answer": "Use filter(). It returns a new array containing only items for which the callback returns true.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "https://app.notion.com/3e5f385edd7f81f4a63bf6b7484f9e84"
+  },
+  {
+    "id": "3e5f385edd7f81fe97e6dcbc5985f980",
+    "question": "What is wrong with this TypeScript type?\n\ninterface RankedTask { score: number | null }\n\nwhen the function promises to return only ranked tasks with valid numeric scores?",
+    "answer": "The type weakens the output contract and forces every caller to handle null. Filter or guard nulls before constructing RankedTask so the final type can stay score: number.",
+    "category": "TypeScript",
+    "difficulty": "Medium",
+    "source": "https://app.notion.com/3e5f385edd7f81fe97e6dcbc5985f980"
+  }
+]
