@@ -686,5 +686,13 @@
     "category": "TypeScript",
     "difficulty": "Medium",
     "source": "https://app.notion.com/3e5f385edd7f81fe97e6dcbc5985f980"
+  },
+  {
+    "id": "aptura-average-divisor-check",
+    "question": "When calculating an average, which value should you check before dividing?",
+    "answer": "Check the count/denominator, not the sum. Division by zero happens when the number of items is 0.",
+    "category": "Debugging",
+    "difficulty": "Easy",
+    "source": "Aptura Eval Lab"
   }
 ]
