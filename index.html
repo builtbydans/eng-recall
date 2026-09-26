@@ -36,19 +36,23 @@
             </label>
             <span class="difficulty" id="difficulty"></span>
           </div>
-          <section class="question-card" aria-labelledby="question">
-            <p class="eyebrow" id="eyebrow"></p>
-            <h1 id="question"></h1>
-            <pre class="code-example" id="code-example" hidden></pre>
-            <div class="progress-track" role="progressbar" id="progress" aria-label="Card progress" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" id="progress-fill"></div></div>
-          </section>
-          <div class="choices" id="choices" role="group" aria-label="Choose an answer" hidden></div>
-          <section class="answer-panel" id="answer-panel">
-            <button class="answer-toggle" id="answer-toggle" type="button" aria-expanded="false" aria-controls="answer-content">
-              <span id="answer-label">Reveal answer</span>
-              <svg class="chevron" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="answer-content" id="answer-content" hidden>
+          <div class="card-layout">
+            <div class="prompt-column">
+              <section class="question-card" aria-labelledby="question">
+                <p class="eyebrow" id="eyebrow"></p>
+                <h1 id="question"></h1>
+                <pre class="code-example" id="code-example" hidden></pre>
+                <div class="progress-track" role="progressbar" id="progress" aria-label="Card progress" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" id="progress-fill"></div></div>
+              </section>
+              <div class="choices" id="choices" role="group" aria-label="Choose an answer" hidden></div>
+            </div>
+            <section class="answer-panel" id="answer-panel">
+              <button class="answer-toggle" id="answer-toggle" type="button" aria-expanded="false" aria-controls="answer-content">
+                <span id="answer-label">Reveal answer</span>
+                <svg class="chevron" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="answer-hint" id="answer-hint" hidden>Choose an option to see the answer and explanation.</p>
+              <div class="answer-content" id="answer-content" hidden>
               <p class="answer-kicker" id="answer-kicker">THE ANSWER</p>
               <p class="answer-text" id="answer-text"></p>
               <div class="self-grade" id="self-grade" hidden>
@@ -60,7 +64,8 @@
               </div>
               <p class="grade-note" id="grade-note" hidden></p>
             </div>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
       <footer class="bottom-bar"><button class="next-button" id="next-button" type="button">Next card <span aria-hidden="true">→</span></button></footer>

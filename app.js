@@ -30,7 +30,7 @@ const ui = {
   category: $("category"), count: $("count"), score: $("score"), reset: $("reset-button"), eyebrow: $("eyebrow"),
   difficulty: $("difficulty"), question: $("question"), code: $("code-example"), choices: $("choices"),
   answerPanel: $("answer-panel"), answer: $("answer-text"), kicker: $("answer-kicker"),
-  content: $("answer-content"), toggle: $("answer-toggle"), label: $("answer-label"),
+  content: $("answer-content"), toggle: $("answer-toggle"), label: $("answer-label"), hint: $("answer-hint"),
   next: $("next-button"), progress: $("progress"), fill: $("progress-fill"),
   grade: $("self-grade"), gradeYes: $("grade-yes"), gradeNo: $("grade-no"), gradeNote: $("grade-note"),
 };
@@ -75,7 +75,7 @@ function setOpen(value) {
   opened = value;
   ui.toggle.setAttribute("aria-expanded", String(value));
   ui.content.hidden = !value;
-  ui.label.textContent = value ? "Answer" : "Reveal answer";
+  ui.label.textContent = state.mode === "mcq" || value ? "Answer" : "Reveal answer";
 }
 function populateCategories() {
   const deck = decks[state.mode];
@@ -114,7 +114,6 @@ function renderChoices(card, selected) {
         save();
         renderChoices(card, index);
         renderAnswer(card, index);
-        ui.answerPanel.hidden = false;
         setOpen(true);
         updateScore();
       });
@@ -124,13 +123,17 @@ function renderChoices(card, selected) {
 }
 function renderAnswer(card, mark) {
   if (state.mode === "mcq") {
-    ui.answerPanel.hidden = mark === undefined;
+    ui.answerPanel.classList.toggle("is-awaiting-choice", mark === undefined);
+    ui.hint.hidden = mark !== undefined;
+    ui.toggle.disabled = mark === undefined;
     ui.kicker.textContent = mark === card.correctIndex ? "CORRECT" : "NOT QUITE";
     ui.answer.textContent = `Correct answer: ${card.options[card.correctIndex]}\n\n${card.explanation}`;
     ui.grade.hidden = true;
     ui.gradeNote.hidden = true;
   } else {
-    ui.answerPanel.hidden = false;
+    ui.answerPanel.classList.remove("is-awaiting-choice");
+    ui.hint.hidden = true;
+    ui.toggle.disabled = false;
     ui.kicker.textContent = "THE ANSWER";
     ui.answer.textContent = card.answer;
     ui.grade.hidden = false;
