@@ -1,6 +1,8 @@
 # eng-recall
 
-A small, mobile-first flashcard app built from the [Engineering Recall Bank](https://app.notion.com/p/5bb8d2d8610d4a6c9276089122764048) in Notion. Open-ended mode contains a static snapshot of 86 Notion cards plus 16 extra interview fundamentals. MCQ mode contains 100 questions, including code-reading and fill-in-the-blank examples. There is no backend, account, or tracking. Mode, category, current cards, scores, and the current shuffle are saved in the browser.
+A small, mobile-first flashcard app built from the [Engineering Recall Bank](https://app.notion.com/p/5bb8d2d8610d4a6c9276089122764048) in Notion. Open-ended mode contains a static snapshot of Notion cards plus extra interview fundamentals. MCQ mode includes code-reading and fill-in-the-blank examples. There is no backend, account, or tracking. Mode, category, current cards, scores, and the current shuffle are saved in the browser.
+
+The ad spaces are visual previews only. They display no live ads, run no AdSense scripts, and have no outbound links. The desktop view shows a horizontal banner and a right-column placement; the compact view keeps only the banner.
 
 For MCQs, choosing an option grades it once and reveals the correct answer and explanation. Open-ended cards can be self-scored after revealing the answer. Scores show correct answers out of attempted cards within the selected mode and category. MCQ order and each card's options are shuffled independently when a fresh session begins; they remain stable across reloads. Reset confirms before clearing both modes' progress and scores, then starts a new MCQ shuffle. The shuffle implementation and tests are in `shuffle.mjs` and `shuffle.test.mjs`.
 

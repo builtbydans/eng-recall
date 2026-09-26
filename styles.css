@@ -19,9 +19,23 @@ button:focus-visible, select:focus-visible { outline: 3px solid #7454a7; outline
 .score-actions { display: flex; align-items: center; gap: 12px; }
 .reset-button { min-height: 40px; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 7px 10px; color: #625478; font: 600 11px/1.2 var(--mono); }
 .reset-button:hover { background: #f5effb; border-color: #c5afd9; }
+.ad-slot { color: #777384; }
+.ad-label { display: block; margin: 0 0 7px; text-align: right; font: 600 9px/1.2 var(--mono); letter-spacing: .09em; }
+.ad-banner { margin: 0 0 22px; }
+.ad-creative { border: 1px solid #d8d2dd; border-radius: 12px; background: linear-gradient(115deg, #f3edf9 0%, #f6f4f9 54%, #edf2f3 100%); color: #302d40; overflow: hidden; }
+.ad-creative-wide { min-height: 88px; display: flex; align-items: center; gap: 20px; padding: 14px 26px; }
+.ad-mark { display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 12px; background: #ddd0ed; color: #5f4e75; font: 700 19px/1 var(--mono); }
+.ad-copy { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ad-copy strong { font-size: 17px; line-height: 1.25; letter-spacing: -.025em; }
+.ad-copy > span { color: #6d6978; font-size: 12px; line-height: 1.35; }
+.ad-action { flex: none; margin-left: auto; padding: 10px 13px; border: 1px solid #c7bad7; border-radius: 7px; background: #fffafee0; color: #544461; font: 600 11px/1 var(--mono); white-space: nowrap; }
 .practice { display: flex; flex-direction: column; gap: 15px; }
 .card-layout { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); align-items: start; gap: 20px; }
 .prompt-column { display: flex; flex-direction: column; gap: 15px; min-width: 0; }
+.response-column { display: flex; flex-direction: column; gap: 25px; min-width: 0; }
+.ad-creative-square { min-height: 250px; display: flex; flex-direction: column; align-items: flex-start; padding: 24px; gap: 22px; }
+.ad-creative-square .ad-copy strong { font-size: 20px; }
+.ad-creative-square .ad-action { margin: auto 0 0; }
 .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; }
 .topic-picker { display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px; border-radius: 100px; color: var(--ink); background: var(--tint); border: 1px solid color-mix(in srgb, var(--accent), white 42%); max-width: 70%; }
 .picker-dot { width: 9px; height: 9px; flex: none; border-radius: 50%; background: var(--accent); }
@@ -68,13 +82,20 @@ h1 { margin: 24px 0 30px; white-space: pre-wrap; overflow-wrap: anywhere; font-s
 .next-button span { font-size: 24px; font-weight: 400; line-height: .7; }
 @media (max-width: 799px) {
   .card-layout { display: flex; flex-direction: column; gap: 15px; }
-  .prompt-column, .answer-panel { width: 100%; }
+  .prompt-column, .response-column, .answer-panel { width: 100%; }
   .answer-panel.is-awaiting-choice { display: none; }
+  .ad-sidebar { display: none; }
 }
 @media (max-width: 480px) {
   .masthead { min-height: 61px; }
   .workspace { padding-top: 13px; }
   .mode-row { margin-bottom: 12px; }
+  .ad-banner { margin-bottom: 17px; }
+  .ad-creative-wide { min-height: 91px; gap: 12px; padding: 13px 15px; }
+  .ad-creative-wide .ad-mark { width: 36px; height: 36px; font-size: 15px; }
+  .ad-creative-wide .ad-copy strong { font-size: 14px; }
+  .ad-creative-wide .ad-copy > span { font-size: 10px; }
+  .ad-creative-wide .ad-action { display: none; }
   .mode-tabs button { padding: 7px 10px; font-size: 11px; }
   .score { font-size: 11px; }
   .score-actions { gap: 6px; }
