@@ -694,5 +694,55 @@
     "category": "Debugging",
     "difficulty": "Easy",
     "source": "Aptura Eval Lab"
+  },
+  [
+  {
+    "id": "js-map-purpose",
+    "question": "What is a JavaScript Map and when is it useful?",
+    "answer": "A Map stores key-value pairs and is useful when you want to retrieve values directly by a key, such as looking up a task by task_id.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "js-map-get",
+    "question": "What does Map.get(key) do?",
+    "answer": "It returns the value associated with that key. If the key does not exist, it returns undefined.",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "js-map-constructor-entries",
+    "question": "What does new Map([[key, value], [key, value]]) create?",
+    "answer": "A Map from an array of [key, value] entries. Each first item becomes a key and each second item becomes its value.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "js-map-index-by-id",
+    "question": "Why might you convert an array of objects into a Map keyed by ID?",
+    "answer": "To build an index once and then retrieve objects directly by ID instead of repeatedly searching the array.",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "big-o-find-nested",
+    "question": "Why can using .find() inside a loop result in O(N × M) complexity?",
+    "answer": "The outer loop processes N items and each .find() may scan M items, so the total work can grow as N × M.",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "big-o-map-lookup",
+    "question": "How can a Map reduce matching two arrays from O(N × M) to O(N + M)?",
+    "answer": "Build a Map from one array in O(M), then loop through the other array in O(N) and use average O(1) Map lookups.",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
   }
+]
 ]
