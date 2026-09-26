@@ -68,4 +68,118 @@
   {"id":"more-sys-04","category":"System Design","difficulty":"Medium","question":"Where should session data live if any of several stateless servers may handle the next request?","options":["Only in one server's local memory","In a shared store or a verifiable client token, as appropriate","In a CSS file","In a console log"],"correctIndex":1,"explanation":"A request must be verifiable by whichever instance receives it; instance-local memory creates sticky-session dependence."},
   {"id":"more-sys-05","category":"System Design","difficulty":"Medium","question":"What is the point of a health check for an API instance?","options":["To let traffic routing avoid an unhealthy instance","To guarantee every query is fast","To replace error logs","To test only the frontend colours"],"correctIndex":0,"explanation":"Health checks help load balancers or orchestrators avoid sending traffic to instances that cannot serve it."},
   {"id":"more-sys-06","category":"System Design","difficulty":"Medium","question":"What can go wrong if a queued job is processed more than once?","options":["Duplicate side effects unless the worker is idempotent","The queue becomes a database index","HTTP automatically retries all requests","The UI font changes"],"correctIndex":0,"explanation":"Many queues can redeliver a job. Workers should handle duplicate delivery safely, for example with an idempotency key."}
+  [
+  {
+    "id": "mcq-js-map-get",
+    "question": "What does userMap.get('u2') do?",
+    "options": [
+      "Searches every value in the Map",
+      "Returns the value stored under the key 'u2'",
+      "Returns the index of 'u2'",
+      "Removes 'u2' from the Map"
+    ],
+    "answer": "Returns the value stored under the key 'u2'",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-js-map-missing-key",
+    "question": "What does map.get('missing') return when the key does not exist?",
+    "options": [
+      "null",
+      "false",
+      "undefined",
+      "-1"
+    ],
+    "answer": "undefined",
+    "category": "JavaScript",
+    "difficulty": "Easy",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-js-map-entries",
+    "question": "What does tasks.map(task => [task.id, task]) produce?",
+    "options": [
+      "An object keyed by task ID",
+      "An array of [id, task] pairs",
+      "A Map keyed by task ID",
+      "An array containing only task IDs"
+    ],
+    "answer": "An array of [id, task] pairs",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-js-new-map",
+    "question": "What does new Map(tasks.map(task => [task.id, task])) create?",
+    "options": [
+      "A Map where task IDs are keys and task objects are values",
+      "An array containing unique tasks",
+      "A Set containing task IDs",
+      "An object where task IDs are array indexes"
+    ],
+    "answer": "A Map where task IDs are keys and task objects are values",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-big-o-find-loop",
+    "question": "You loop through N baseline tasks and call .find() over M skill tasks each time. What is the worst-case time complexity?",
+    "options": [
+      "O(1)",
+      "O(N + M)",
+      "O(N × M)",
+      "O(log N)"
+    ],
+    "answer": "O(N × M)",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-big-o-map-index",
+    "question": "You build a Map from M skill tasks, then loop through N baseline tasks using Map.get(). What is the average overall complexity?",
+    "options": [
+      "O(N × M)",
+      "O(N + M)",
+      "O(N²)",
+      "O(log N)"
+    ],
+    "answer": "O(N + M)",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-map-when-to-use",
+    "question": "Which situation is the strongest reason to build a Map?",
+    "options": [
+      "You need to repeatedly look up objects by ID",
+      "You need to sort an array once",
+      "You need to print every array item",
+      "You need to add two numbers"
+    ],
+    "answer": "You need to repeatedly look up objects by ID",
+    "category": "JavaScript",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  },
+  {
+    "id": "mcq-map-build-location",
+    "question": "Why should a lookup Map usually be built before the matching loop?",
+    "options": [
+      "Maps cannot be created inside loops",
+      "To avoid rebuilding the same index on every iteration",
+      "Map.get() only works outside loops",
+      "TypeScript requires Maps to be declared first"
+    ],
+    "answer": "To avoid rebuilding the same index on every iteration",
+    "category": "Big O",
+    "difficulty": "Medium",
+    "source": "Aptura Eval Lab"
+  }
+]
 ]
